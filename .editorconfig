@@ -1,0 +1,23 @@
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+# 4 space indentation
+[*.scss]
+indent_style = space
+indent_size = 4
+
+# Use bracketed regexp to target specific file types or file locations
+[*.{js,json}]
+indent_style = space
+indent_size = 2
+
+# Remove any whitespace characters preceding newline characters ["true", "false"]
+trim_trailing_whitespace = false
+
+# Ensure file ends with a newline when saving ["true", "false"]
+insert_final_newline = true
