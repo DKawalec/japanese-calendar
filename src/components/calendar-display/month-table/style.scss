@@ -1,5 +1,13 @@
 .table {
+    margin: 6px auto;
     border-collapse: collapse;
+    user-select: none;
+}
+
+.headerCell {
+    padding: 0px 12px 6px;
+    text-align: center;
+    display: table-cell;
 }
 
 .cell {
@@ -8,7 +16,12 @@
     display: table-cell;
     cursor: pointer;
     border: 1px solid #DDDDDD;
-    transition: background-color 200ms ease-in;
+    transition: background-color 200ms ease-out;
+}
+
+.empty {
+    border: none;
+    cursor: default;
 }
 
 .active {

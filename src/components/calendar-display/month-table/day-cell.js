@@ -19,6 +19,12 @@ class DayCell extends PureComponent {
 
   render() {
     const { day, currentDay } = this.props;
+    
+    // just placeholder to align cells with the right weekday
+    if (day === 0) {
+      return <td className={`${style.cell} ${style.empty}`}/>;
+    }
+
     return (
       <td
         className={`${style.cell} ${day === currentDay ? style.active : ''}`}

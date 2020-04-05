@@ -10,8 +10,10 @@ class CalendarDisplay extends PureComponent {
   render() {
     return (
       <div className={style.container}>
-        <YearSelector/>
-        <MonthSelector/>
+        <div className={style.selectorsContainer}>
+          <MonthSelector/>
+          <YearSelector/>
+        </div>
         <MonthTable/>
       </div>
     );

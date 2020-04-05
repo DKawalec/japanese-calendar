@@ -2,4 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 305px;
+}
+
+.selectorsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }

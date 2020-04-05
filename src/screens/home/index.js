@@ -7,9 +7,10 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className={style.main}> 
+        <h1>some text</h1>
         <Section>
-          <h1>some text</h1>
           <CalendarDisplay />
+          <br/>
         </Section>
       </div>
     );

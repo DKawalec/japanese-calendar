@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { setDate } from '../../../actions/dateActions';
+import { MONTH_NAMES } from '../../../constants/date-constants';
 import { getNextMonth, getPreviousMonth } from '../../../utils/date-helpers';
 
 import style from './style.scss';
@@ -28,7 +29,7 @@ class MonthSelector extends PureComponent {
     return (
       <div className={style.selector}>
         <button onClick={this.decreaseMonth}>{'<'}</button>
-        {this.props.month}
+        {MONTH_NAMES[this.props.month - 1]}
         <button onClick={this.increaseMonth}>{'>'}</button>
       </div>
     );  
