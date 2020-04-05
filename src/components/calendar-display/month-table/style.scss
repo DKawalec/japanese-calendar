@@ -1,0 +1,16 @@
+.table {
+    border-collapse: collapse;
+}
+
+.cell {
+    padding: 12px;
+    text-align: center;
+    display: table-cell;
+    cursor: pointer;
+    border: 1px solid #DDDDDD;
+    transition: background-color 200ms ease-in;
+}
+
+.active {
+    background-color: #DEDEDE;
+}

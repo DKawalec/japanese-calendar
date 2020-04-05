@@ -3,18 +3,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import style from './style.scss';
 
-import YearSelector from './year-selector/index';
-import MonthSelector from './month-selector/index';
-import DaySelector from './day-selector/index';
+import { YearSelector, MonthSelector, DaySelector} from './selectors/index';
+import MonthTable from './month-table/index';
 
 class CalendarDisplay extends PureComponent {
   render() {
     return (
-      <div className={style.outline}>
+      <div className={style.container}>
         <YearSelector/>
         <MonthSelector/>
-        <DaySelector/>
-        I'm a calendar! {this.props.year}, {this.props.month}, {this.props.day}
+        <MonthTable/>
       </div>
     );
   } 

@@ -1,8 +1,11 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import { setDate } from '../../../actions/dateActions';
 import { getNextMonth, getPreviousMonth } from '../../../utils/date-helpers';
+
+import style from './style.scss';
 
 class MonthSelector extends PureComponent {
   constructor(props) {
@@ -23,7 +26,7 @@ class MonthSelector extends PureComponent {
 
   render() {
     return (
-      <div>
+      <div className={style.selector}>
         <button onClick={this.decreaseMonth}>{'<'}</button>
         {this.props.month}
         <button onClick={this.increaseMonth}>{'>'}</button>

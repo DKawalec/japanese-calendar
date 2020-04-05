@@ -23,7 +23,7 @@ export const getMaxDay = (month, year) => {
 
 export const getPreviousYear = (day, month, year) => {
   if (isLeapYear(year) && month === 2 && day === LEAP_FEBRUARY_DAYS) {
-    return { day: 1, month: 3, year: year - 1};
+    return { day: 28, month: 2, year: year - 1};
   } else {
     return { day, month, year: year - 1 };
   }
@@ -31,7 +31,7 @@ export const getPreviousYear = (day, month, year) => {
 
 export const getNextYear = (day, month, year) => {
   if (isLeapYear(year) && month === 2 && day === LEAP_FEBRUARY_DAYS) {
-    return { day: 1, month: 3, year: year + 1};
+    return { day: 28, month: 2, year: year + 1};
   } else {
     return { day, month, year: year + 1 };
   }
