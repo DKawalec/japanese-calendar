@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { setDate } from '../../../actions/dateActions';
+import { ARROW_RIGHT, ARROW_LEFT } from '../../../constants/unicode-codes';
 import { getNextYear, getPreviousYear } from '../../../utils/date-helpers';
 
 import style from './style.scss';
@@ -27,9 +28,9 @@ class YearSelector extends PureComponent {
   render() {
     return (
       <div className={style.selector}>
-        <button onClick={this.decreaseYear}>{'<'}</button>
+        <button onClick={this.decreaseYear}>{ARROW_LEFT}</button>
         {this.props.year}
-        <button onClick={this.increaseYear}>{'>'}</button>
+        <button onClick={this.increaseYear}>{ARROW_RIGHT}</button>
       </div>
     );  
   } 

@@ -6,7 +6,7 @@ const defaultState = {
   day: 4
 };
 
-export default function exampleReducer(state = defaultState, action) {
+export default function dateReducer(state = defaultState, action) {
   switch (action.type) {
   case SET_DATE: 
     return Object.assign({}, state, { year: action.year, month: action.month, day: action.day });

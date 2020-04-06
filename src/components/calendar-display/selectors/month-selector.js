@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { setDate } from '../../../actions/dateActions';
 import { MONTH_NAMES } from '../../../constants/date-constants';
+import { ARROW_RIGHT, ARROW_LEFT } from '../../../constants/unicode-codes';
 import { getNextMonth, getPreviousMonth } from '../../../utils/date-helpers';
 
 import style from './style.scss';
@@ -28,9 +29,9 @@ class MonthSelector extends PureComponent {
   render() {
     return (
       <div className={style.selector}>
-        <button onClick={this.decreaseMonth}>{'<'}</button>
+        <button onClick={this.decreaseMonth}>{ARROW_LEFT}</button>
         {MONTH_NAMES[this.props.month - 1]}
-        <button onClick={this.increaseMonth}>{'>'}</button>
+        <button onClick={this.increaseMonth}>{ARROW_RIGHT}</button>
       </div>
     );  
   } 

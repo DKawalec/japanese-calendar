@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider {
+    font-size: 32px;
+    padding: 0 6px;
+    line-height: 32px;
+    text-shadow: 1px 1px 1px #BBBBBB;
+}
+
+.input {
+    font-family: monospace;
+    font-size: 32px;
+    padding: 6px;
+    box-shadow: 0 0 2px #BBBBBB inset;
+    border: none;
+    background-color: #EFEFEF;
+    text-align: center;
+    width: 60px;
+    text-shadow: 1px 1px 1px #BBBBBB;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    padding: 0 30px;
+}

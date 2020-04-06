@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import { setDate } from '../../../actions/dateActions';
+import { ARROW_RIGHT, ARROW_LEFT } from '../../../constants/unicode-codes';
 import { getNextDay, getPreviousDay } from '../../../utils/date-helpers';
 
 class DaySelector extends PureComponent {
@@ -24,9 +26,9 @@ class DaySelector extends PureComponent {
   render() {
     return (
       <div>
-        <button onClick={this.decreaseDay}>{'<'}</button>
+        <button onClick={this.decreaseDay}>{ARROW_LEFT}</button>
         {this.props.day}
-        <button onClick={this.increaseDay}>{'>'}</button>
+        <button onClick={this.increaseDay}>{ARROW_RIGHT}</button>
       </div>
     );  
   } 

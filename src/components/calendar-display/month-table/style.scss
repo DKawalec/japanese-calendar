@@ -17,6 +17,7 @@
     cursor: pointer;
     border: 1px solid #DDDDDD;
     transition: background-color 200ms ease-out;
+    text-shadow: 0 0 1px #BBBBBB;
 }
 
 .empty {
@@ -25,5 +26,7 @@
 }
 
 .active {
-    background-color: #DEDEDE;
+    background-color: #EFEFEF;
+    border: none;
+    box-shadow: 0 0 2px #BBBBBB inset;
 }
