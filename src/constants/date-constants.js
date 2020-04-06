@@ -7,21 +7,20 @@ export const LEAP_FEBRUARY_DAYS = 29;
 export const SHORT_MONTH_DAYS = 30;
 export const LONG_MONTH_DAYS = 31;
 
-export const DAY_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-export const DAYS_SHORT = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+export const DAYS_SHORT = ['P', 'W', 'Ś', 'C', 'P', 'S', 'N'];
 export const MONTH_NAMES = [
-  'January',
-  'February', 
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
+  'styczeń',
+  'luty', 
+  'marzec',
+  'kwiecień',
+  'maj',
+  'czerwiec',
+  'lipiec',
+  'sierpień',
+  'wrzesień',
+  'październik',
+  'listopad',
+  'grudzień'
 ];
 
 // 1 Jan 2018 was Monday, this is important

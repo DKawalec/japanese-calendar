@@ -1,4 +1,10 @@
-import { MIN_HOUR, MAX_HOUR, MIN_MINUTE, MAX_MINUTE } from '../constants/time-constants';
+import {
+  MIN_HOUR,
+  MAX_HOUR,
+  MIN_MINUTE,
+  MAX_MINUTE,
+  AM, PM, NOON, MIDNIGHT
+} from '../constants/time-constants';
 
 export const formatTime = time => {
   if (time < 10) {
@@ -36,4 +42,14 @@ export const getSafeMinute = minute => {
     return MIN_MINUTE;
   }
   return minute;
+};
+
+export const getAmPm = (hour, minute) => {
+  if (hour === 12 && minute === MIN_MINUTE) {
+    return NOON;
+  } else if (hour === MIN_HOUR && minute === MIN_MINUTE) {
+    return MIDNIGHT;
+  } else {
+    return hour < 12 ? AM : PM;
+  }
 };
