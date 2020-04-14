@@ -88,3 +88,7 @@ export const TIME_OF_DAY_NAMES = {
   NOON: 'hiru',
   MIDNIGHT: 'yoru'
 };
+
+export const MINUTE_TENS = [' ', 'juu', 'nijuu', 'sanjuu', 'yonjuu', 'gojuu'];
+export const MINUTE_ONES = ['ppun', 'ippun', 'nifun', 'sanpun', 'yonpun', 'gofun', 'roppun', 'nanafun', 'happun', 'kyuufun'];
+export const HALF = 'han';
