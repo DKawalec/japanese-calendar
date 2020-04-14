@@ -6,7 +6,6 @@ import {
   LEAP_FEBRUARY_DAYS,
   SHORT_MONTH_DAYS,
   LONG_MONTH_DAYS,
-  YEAR_ZERO,
   DAYS_TABLE
 } from '../constants/date-constants';
 
@@ -96,7 +95,6 @@ export const getNextDay = (day, month, year) => {
 // IBM's Rata Die algorithm
 export const getDayOfWeek = (day, month, year) => {
   let daysDiff = day;
-  const step = year > YEAR_ZERO ? -1 : +1;
   for (let y = 1; y <= year; y++) {
     const numMonths = y < year ? 12 : month - 1;
     const monthTableIndex = isLeapYear(y) ? 1 : 0;

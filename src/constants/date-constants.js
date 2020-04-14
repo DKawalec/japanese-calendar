@@ -23,8 +23,7 @@ export const MONTH_NAMES = [
   'grudzień'
 ];
 
-// 1 Jan 2018 was Monday, this is important
-export const YEAR_ZERO = 2018;
+// for day of the week calculation
 export const DAYS_TABLE = [
   [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
   [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]

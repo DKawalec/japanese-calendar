@@ -41,7 +41,7 @@ DaySelector.propTypes = {
   setDate: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
     day: state.date.day,
     month: state.date.month,
@@ -49,7 +49,7 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-function mapDispatchToProps(dispatch, ownProps) {
+function mapDispatchToProps(dispatch) {
   return {
     setDate: (date) => dispatch(setDate(date))
   };

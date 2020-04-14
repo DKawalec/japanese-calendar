@@ -1,9 +1,13 @@
 {
   "extends": [
     "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:react/recommended"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+  },
   "plugins": [
     "react"
   ],
@@ -31,7 +35,7 @@
     "indent": [1, 2],
     "no-trailing-spaces": 0,
     "eol-last": 0,
-    "no-unused-vars": 0,
+    "no-unused-vars": 1,
     "no-underscore-dangle": 0,
     "no-alert": 0,
     "no-lone-blocks": 0,
@@ -63,9 +67,7 @@
     "react/prefer-es6-class": 1,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
-    "react/require-extension": 1,
     "react/self-closing-comp": 1,
-    "react/sort-comp": 1,
-    "react/wrap-multilines": 1
+    "react/sort-comp": 1
   }
 }

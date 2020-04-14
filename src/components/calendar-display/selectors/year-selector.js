@@ -28,9 +28,9 @@ class YearSelector extends PureComponent {
   render() {
     return (
       <div className={style.selector}>
-        {/*<button onClick={this.decreaseYear}>{ARROW_LEFT}</button>*/}
+        <button onClick={this.decreaseYear}>{ARROW_LEFT}</button>
         {this.props.year}
-        {/*<button onClick={this.increaseYear}>{ARROW_RIGHT}</button>*/}
+        <button onClick={this.increaseYear}>{ARROW_RIGHT}</button>
       </div>
     );  
   } 
@@ -43,7 +43,7 @@ YearSelector.propTypes = {
   setDate: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
     day: state.date.day,
     month: state.date.month,
@@ -51,7 +51,7 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-function mapDispatchToProps(dispatch, ownProps) {
+function mapDispatchToProps(dispatch) {
   return {
     setDate: (date) => dispatch(setDate(date))
   };

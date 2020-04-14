@@ -19,7 +19,7 @@ DateTranslation.propTypes = {
   dayOfWeek: PropTypes.number.isRequired
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
     year: state.date.year,
     month: state.date.month,

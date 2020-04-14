@@ -18,7 +18,7 @@ DateTranslation.propTypes = {
   timeOfDay: PropTypes.string.isRequired
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
     hour: state.time.hour,
     minute: state.time.minute,
