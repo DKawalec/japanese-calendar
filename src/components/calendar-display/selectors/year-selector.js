@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { setDate } from '../../../actions/dateActions';
 import { ARROW_RIGHT, ARROW_LEFT } from '../../../constants/unicode-codes';
 import { getNextYear, getPreviousYear } from '../../../utils/date-helpers';
 
@@ -17,19 +15,19 @@ class YearSelector extends PureComponent {
   }
 
   decreaseYear() {
-    const {day, month, year, setDate} = this.props;
-    setDate(getPreviousYear(day, month, year));
+    const { date: {day, month, year}, onChange} = this.props;
+    onChange(getPreviousYear(day, month, year));
   }
   increaseYear() {
-    const {day, month, year, setDate} = this.props;
-    setDate(getNextYear(day, month, year));
+    const { date: {day, month, year}, onChange} = this.props;
+    onChange(getNextYear(day, month, year));
   }
 
   render() {
     return (
       <div className={style.selector}>
         <button onClick={this.decreaseYear}>{ARROW_LEFT}</button>
-        {this.props.year}
+        {this.props.date.year}
         <button onClick={this.increaseYear}>{ARROW_RIGHT}</button>
       </div>
     );  
@@ -37,24 +35,13 @@ class YearSelector extends PureComponent {
 }
 
 YearSelector.propTypes = {
-  day: PropTypes.number.isRequired,
-  month: PropTypes.number.isRequired,
-  year: PropTypes.number.isRequired,
-  setDate: PropTypes.func.isRequired
+  date: PropTypes.shape({
+    year: PropTypes.number.isRequired,
+    month: PropTypes.number.isRequired,
+    day: PropTypes.number.isRequired
+  }).isRequired,
+  onChange: PropTypes.func.isRequired,
+  isActive: PropTypes.bool.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    day: state.date.day,
-    month: state.date.month,
-    year: state.date.year
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    setDate: (date) => dispatch(setDate(date))
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(YearSelector);
+export default YearSelector;

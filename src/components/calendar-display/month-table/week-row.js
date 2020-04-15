@@ -5,16 +5,23 @@ import DayCell from './day-cell';
 
 class WeekRow extends PureComponent {
   render() {
+    const { date, days, onChange } = this.props;
     return (
       <tr>
-        { this.props.days.map((e, i) => <DayCell day={e} key={`day-${e}-${i}`}/>) }
+        { days.map((e, i) => <DayCell onChange={onChange} date={date} day={e} key={`day-${e}-${i}`}/>) }
       </tr>
     );
   }
 }
 
 WeekRow.propTypes = {
-  days: PropTypes.arrayOf(PropTypes.number).isRequired
+  date: PropTypes.shape({
+    year: PropTypes.number.isRequired,
+    month: PropTypes.number.isRequired,
+    day: PropTypes.number.isRequired
+  }).isRequired,
+  days: PropTypes.arrayOf(PropTypes.number).isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 export default WeekRow;

@@ -1,7 +1,6 @@
 import {
   MIN_MONTH,
   MAX_MONTH,
-  MIN_DAY,
   FEBRUARY_DAYS,
   LEAP_FEBRUARY_DAYS,
   SHORT_MONTH_DAYS,
@@ -40,11 +39,12 @@ export const getNextYear = (day, month, year) => {
 
 export const getPreviousMonth = (day, month, year) => {
   const lastMonth = month - 1;
-  if (day > FEBRUARY_DAYS) {
+  const maxDayLastMonth = getMaxDay(lastMonth, year);
+  if (day > maxDayLastMonth) {
     if (lastMonth < MIN_MONTH) {
       return { day: getMaxDay(12, year - 1), month: 12, year: year - 1 };
     } else {
-      return { day: getMaxDay(lastMonth, year), month: lastMonth, year };
+      return { day: maxDayLastMonth, month: lastMonth, year };
     }
   } else {
     if (lastMonth < MIN_MONTH) {
@@ -57,11 +57,12 @@ export const getPreviousMonth = (day, month, year) => {
 
 export const getNextMonth = (day, month, year) => {
   const nextMonth = month + 1;
-  if (day > FEBRUARY_DAYS) {
+  const maxDayNextMonth = getMaxDay(nextMonth, year);
+  if (day > maxDayNextMonth) {
     if (nextMonth > MAX_MONTH) {
       return { day: getMaxDay(1, year + 1), month: 1, year: year + 1 };
     } else {
-      return { day: getMaxDay(nextMonth, year), month: nextMonth, year };
+      return { day: maxDayNextMonth, month: nextMonth, year };
     }
   } else {
     if (nextMonth > MAX_MONTH) {
@@ -70,26 +71,6 @@ export const getNextMonth = (day, month, year) => {
       return { day, month: nextMonth, year }; 
     }
   }
-};
-
-export const getPreviousDay = (day, month, year) => {
-  let yesterday = day - 1;
-  let result = { day: yesterday, month, year };
-  if (yesterday < MIN_DAY) {
-    result = getPreviousMonth(day, month, year);
-    result.day = getMaxDay(result.month, result.year);
-  }
-  return result;
-};
-
-export const getNextDay = (day, month, year) => {
-  let tomorrow = day + 1;
-  let result = { day: tomorrow, month, year };
-  if (tomorrow > getMaxDay(month, year)) {
-    result = getNextMonth(day, month, year);
-    result.day = 1;
-  }
-  return result;
 };
 
 // IBM's Rata Die algorithm

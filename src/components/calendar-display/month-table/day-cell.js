@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
-import { setDate } from '../../../actions/dateActions';
 import style from './style.scss';
 
 class DayCell extends PureComponent {
@@ -13,12 +11,12 @@ class DayCell extends PureComponent {
   }
 
   onClick() {
-    const { day, month, year, setDate } = this.props;
-    setDate({day, month, year});
+    const { day, date: {month, year}, onChange } = this.props;
+    onChange({day, month, year});
   }
 
   render() {
-    const { day, currentDay } = this.props;
+    const { day, date } = this.props;
     
     // just placeholder to align cells with the right weekday
     if (day === 0) {
@@ -27,7 +25,7 @@ class DayCell extends PureComponent {
 
     return (
       <td
-        className={`${style.cell} ${day === currentDay ? style.active : ''}`}
+        className={`${style.cell} ${day === date.day ? style.active : ''}`}
         onClick={this.onClick}
       >
         { day }
@@ -38,24 +36,12 @@ class DayCell extends PureComponent {
 
 DayCell.propTypes = {
   day: PropTypes.number.isRequired,
-  currentDay: PropTypes.number.isRequired,
-  month: PropTypes.number.isRequired,
-  year: PropTypes.number.isRequired,
-  setDate: PropTypes.func.isRequired
+  date: PropTypes.shape({
+    year: PropTypes.number.isRequired,
+    month: PropTypes.number.isRequired,
+    day: PropTypes.number.isRequired
+  }).isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    currentDay: state.date.day,
-    month: state.date.month,
-    year: state.date.year
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    setDate: (date) => dispatch(setDate(date))
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DayCell);
+export default DayCell;
