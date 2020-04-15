@@ -5,10 +5,20 @@ import DayCell from './day-cell';
 
 class WeekRow extends PureComponent {
   render() {
-    const { date, days, onChange } = this.props;
+    const { date, days, onChange, isActive } = this.props;
     return (
       <tr>
-        { days.map((e, i) => <DayCell onChange={onChange} date={date} day={e} key={`day-${e}-${i}`}/>) }
+        { 
+          days.map((e, i) => (
+            <DayCell
+              onChange={onChange}
+              isActive={isActive}
+              date={date}
+              day={e}
+              key={`day-${e}-${i}`}
+            />
+          ))
+        }
       </tr>
     );
   }
@@ -21,6 +31,7 @@ WeekRow.propTypes = {
     day: PropTypes.number.isRequired
   }).isRequired,
   days: PropTypes.arrayOf(PropTypes.number).isRequired,
+  isActive: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired
 };
 

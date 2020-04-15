@@ -24,19 +24,27 @@ class MonthTable extends React.Component {
   }
 
   render() {
-    const { date, onChange } = this.props;
+    const { date, onChange, isActive } = this.props;
     const days = this.generateDays(date);
     return (
       <table className={style.table}>
         <thead>
           <tr>
-            { DAYS_SHORT.map((e, i) => <th key={`head-${i}-${e}`} className={style.headerCell}>{e}</th>) }
+            {
+              DAYS_SHORT.map((e, i) =>
+                <th key={`head-${i}-${e}`} className={style.headerCell}>{e}</th>)
+            }
           </tr>
         </thead>
         <tbody>
           {
             days.map((e, i) => (!(i % 7)
-              ? <WeekRow date={date} onChange={onChange} days={days.slice(i, i + 7)} key={`week-${e / 7}`}/>
+              ? (<WeekRow
+                date={date}
+                onChange={onChange}
+                isActive={isActive}
+                days={days.slice(i, i + 7)}
+                key={`week-${e / 7}`}/>)
               : null))
           }
         </tbody>

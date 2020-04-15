@@ -30,12 +30,20 @@ class TimeDisplay extends PureComponent {
   }
 
   render() {
-    const { time: { hour, minute } } = this.props;
+    const { time: { hour, minute }, isActive } = this.props;
     return (
       <div className={style.container}>
-        <TimeInput value={hour} onChange={this.changeHours}/>
+        <TimeInput
+          value={hour}
+          onChange={this.changeHours}
+          isActive={isActive}
+        />
         <span className={style.divider}>:</span>
-        <TimeInput value={minute} onChange={this.changeMinutes}/>
+        <TimeInput
+          value={minute}
+          onChange={this.changeMinutes}
+          isActive={isActive}
+        />
       </div>
     );
   } 
@@ -46,7 +54,13 @@ TimeDisplay.propTypes = {
     hour: PropTypes.number.isRequired,
     minute: PropTypes.number.isRequired
   }).isRequired,
-  onTimeChanged: PropTypes.func.isRequired
+  onTimeChanged: PropTypes.func.isRequired,
+  isActive: PropTypes.bool.isRequired
+};
+
+
+TimeDisplay.defaultProps = {
+  isActive: true
 };
 
 export default TimeDisplay;

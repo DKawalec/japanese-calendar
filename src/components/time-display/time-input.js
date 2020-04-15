@@ -26,26 +26,18 @@ class TimeInput extends PureComponent {
   }
 
   render() {
+    const { value, isActive } = this.props;
     return (
       <div className={style.inputWrapper}>
-        <button
-          className={style.button}
-          onClick={this.increaseTime}
-        >
-          {ARROW_UP}
-        </button>
+        { isActive && <button className={style.button} onClick={this.increaseTime}>{ARROW_UP}</button> }
         <input
           type="text"
           className={style.input}
-          value={formatTime(this.props.value)}
+          value={formatTime(value)}
           onChange={this.setTime}
+          disabled={!isActive}
         />
-        <button
-          className={style.button}
-          onClick={this.decreaseTime}
-        >
-          {ARROW_DOWN}
-        </button>
+        { isActive && <button className={style.button} onClick={this.decreaseTime}>{ARROW_DOWN}</button> }
       </div>
     );
   } 
@@ -53,7 +45,8 @@ class TimeInput extends PureComponent {
 
 TimeInput.propTypes = {
   value: PropTypes.number.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  isActive: PropTypes.bool.isRequired
 };
 
 export default TimeInput;

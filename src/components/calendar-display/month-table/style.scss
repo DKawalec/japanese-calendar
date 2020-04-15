@@ -30,3 +30,8 @@
     border: none;
     box-shadow: 0 0 2px #BBBBBB inset;
 }
+
+.disabled {
+    cursor: default;
+    color: #111111;
+}

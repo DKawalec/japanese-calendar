@@ -2,10 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import { MONTH_NAMES } from '../../../constants/date-constants';
-import { ARROW_RIGHT, ARROW_LEFT } from '../../../constants/unicode-codes';
 import { getNextMonth, getPreviousMonth } from '../../../utils/date-helpers';
-
-import style from './style.scss';
+import Selector from './selector';
 
 class MonthSelector extends PureComponent {
   constructor(props) {
@@ -25,13 +23,15 @@ class MonthSelector extends PureComponent {
   }
 
   render() {
+    const { date: { month }, isActive } = this.props;
     return (
-      <div className={style.selector}>
-        <button onClick={this.decreaseMonth}>{ARROW_LEFT}</button>
-        {MONTH_NAMES[this.props.date.month - 1]}
-        <button onClick={this.increaseMonth}>{ARROW_RIGHT}</button>
-      </div>
-    );  
+      <Selector
+        value={MONTH_NAMES[month - 1]}
+        isActive={isActive}
+        onRightClick={this.increaseMonth}
+        onLeftClick={this.decreaseMonth}
+      />
+    );
   } 
 }
 

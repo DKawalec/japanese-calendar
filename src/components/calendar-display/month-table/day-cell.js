@@ -16,7 +16,7 @@ class DayCell extends PureComponent {
   }
 
   render() {
-    const { day, date } = this.props;
+    const { day, date, isActive } = this.props;
     
     // just placeholder to align cells with the right weekday
     if (day === 0) {
@@ -25,8 +25,8 @@ class DayCell extends PureComponent {
 
     return (
       <td
-        className={`${style.cell} ${day === date.day ? style.active : ''}`}
-        onClick={this.onClick}
+        className={`${style.cell} ${day === date.day ? style.active : ''} ${!isActive ? style.disabled : ''}`}
+        onClick={isActive ? this.onClick : undefined}
       >
         { day }
       </td>
@@ -41,6 +41,7 @@ DayCell.propTypes = {
     month: PropTypes.number.isRequired,
     day: PropTypes.number.isRequired
   }).isRequired,
+  isActive: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired
 };
 

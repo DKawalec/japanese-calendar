@@ -1,10 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { ARROW_RIGHT, ARROW_LEFT } from '../../../constants/unicode-codes';
 import { getNextYear, getPreviousYear } from '../../../utils/date-helpers';
-
-import style from './style.scss';
+import Selector from './selector';
 
 class YearSelector extends PureComponent {
   constructor(props) {
@@ -24,13 +22,15 @@ class YearSelector extends PureComponent {
   }
 
   render() {
+    const { date: { year }, isActive } = this.props;
     return (
-      <div className={style.selector}>
-        <button onClick={this.decreaseYear}>{ARROW_LEFT}</button>
-        {this.props.date.year}
-        <button onClick={this.increaseYear}>{ARROW_RIGHT}</button>
-      </div>
-    );  
+      <Selector
+        value={year}
+        isActive={isActive}
+        onRightClick={this.increaseYear}
+        onLeftClick={this.decreaseYear}
+      />
+    );
   } 
 }
 
