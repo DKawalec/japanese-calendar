@@ -7,8 +7,8 @@ class Section extends React.Component {
   render() {
     return (
       <div className={style.container}>
-        <div>{this.props.children.filter((e,i) => !(i%2))}</div>
-        <div>{this.props.children.filter((e,i) => i%2)}</div>
+        <div className={style.column}>{this.props.children.filter((e,i) => !(i%2))}</div>
+        <div className={style.column}>{this.props.children.filter((e,i) => i%2)}</div>
       </div>
     );
   }
