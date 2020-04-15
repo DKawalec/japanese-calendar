@@ -19,7 +19,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'React Starter',
+      title: 'Nihongo no karendaa',
       template: './src/index.html'
     })
   ],
