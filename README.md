@@ -13,3 +13,7 @@ This is a simple app meant for learning Japanese date and time related terms.
 * To start in development mode: `npm run dev`
 * To build for production mode: `npm run build`
 * To start in production mode: `npm run launch-prod`
+
+### Showcase ###
+
+See it in action at https://dkawalec.github.io/japanese-calendar/
