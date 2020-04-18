@@ -23,7 +23,9 @@ export const getTimeTranslation = (hour, minute, timeOfDay) =>
 export const getMinutesTranslation = minute => {
   const firstDigit = Math.floor(minute/10);
   const secondDigit = minute % 10;
-  if (minute === 30) {
+  if (minute === 0) {
+    return '';
+  } else if (minute === 30) {
     return HALF;
   }
   return `${secondDigit ? MINUTE_TENS[firstDigit] : MINUTE_TENS[firstDigit].slice(0, -1)}${MINUTE_ONES[secondDigit]}`;
