@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    font-size: 24px;
+    background-color: #00b7db;
+    display: flex;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0 1px 2px #BBBBBB;
+}
+
+.link a {
+    display: inline-block;
+    margin-right: 24px;
+    padding: 16px 24px;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    text-decoration: none;
+    transition: background-color 200ms ease-out;
+}
+
+.active {
+    text-decoration: underline;
+    background-color: #00aacc;
+    position: relative;
+
+    &::after {
+        content: '';
+        padding: 8px;
+        transform: rotate(45deg);
+        position: absolute;
+        background-color: #FFFFFF;
+        box-shadow: 3px 3px 2px -2px #BBBBBB inset;
+        bottom: -8px;
+        left: calc(50% - 8px);
+    }
+}
