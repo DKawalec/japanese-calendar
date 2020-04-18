@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { setDate } from '../../actions/dateActions';
-import { setTime } from '../../actions/timeActions';
+import { setDate, setTime } from '../../actions/trainingActions';
 import CalendarDisplay from '../../components/calendar-display/index';
 import TimeDisplay from '../../components/time-display/index';
 import { DateTranslation, TimeTranslation } from '../../components/translation-display/index';
@@ -43,13 +42,13 @@ HomePage.propTypes = {
 function mapStateToProps(state) {
   return {
     date: {
-      year: state.date.year,
-      month: state.date.month,
-      day: state.date.day
+      year: state.training.year,
+      month: state.training.month,
+      day: state.training.day
     },
     time: {
-      hour: state.time.hour,
-      minute: state.time.minute
+      hour: state.training.hour,
+      minute: state.training.minute
     }
   };
 }

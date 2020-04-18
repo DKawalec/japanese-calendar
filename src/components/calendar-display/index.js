@@ -48,7 +48,7 @@ CalendarDisplay.propTypes = {
     month: PropTypes.number.isRequired,
     day: PropTypes.number.isRequired
   }).isRequired,
-  onDateChanged: PropTypes.func.isRequired,
+  onDateChanged: PropTypes.func,
   isActive: PropTypes.bool.isRequired
 };
 

@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { setDate } from '../../actions/dateActions';
-import { setTime } from '../../actions/timeActions';
 import CalendarDisplay from '../../components/calendar-display/index';
 import TimeDisplay from '../../components/time-display/index';
 import Section from '../../components/section/index';
@@ -11,12 +9,12 @@ import style from '../style.scss';
 
 class TestPage extends React.Component {
   render() {
-    const { date, time, setDate, setTime } = this.props;
+    const { date, time } = this.props;
     return (
       <div className={style.main}>
         <Section>
-          <CalendarDisplay date={date} onDateChanged={setDate} isActive={false}/>
-          <TimeDisplay time={time} onTimeChanged={setTime} isActive={false}/>
+          <CalendarDisplay date={date} isActive={false}/>
+          <TimeDisplay time={time} isActive={false}/>
         </Section>
       </div>
     );
@@ -32,30 +30,21 @@ TestPage.propTypes = {
   time: PropTypes.shape({
     hour: PropTypes.number.isRequired,
     minute: PropTypes.number.isRequired
-  }).isRequired,
-  setDate: PropTypes.func.isRequired,
-  setTime: PropTypes.func.isRequired
+  }).isRequired
 };
 
 function mapStateToProps(state) {
   return {
     date: {
-      year: state.date.year,
-      month: state.date.month,
-      day: state.date.day
+      year: state.test.year,
+      month: state.test.month,
+      day: state.test.day
     },
     time: {
-      hour: state.time.hour,
-      minute: state.time.minute
+      hour: state.test.hour,
+      minute: state.test.minute
     }
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    setDate: (date) => dispatch(setDate(date)),
-    setTime: (time) => dispatch(setTime(time))
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TestPage);
+export default connect(mapStateToProps)(TestPage);

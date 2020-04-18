@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import date from './dateReducer';
-import time from './timeReducer';
+import training from './trainingReducer';
+import test from './testReducer';
 
 const rootReducer = combineReducers({
-  date,
-  time
+  training,
+  test
 });
 
 export default rootReducer;

@@ -10,7 +10,7 @@ import {
 import configureStore from './store/configureStore';
 import HomePage from './screens/home/';
 import TestPage from './screens/test/';
-import Navigation from './components/navigation/'
+import Navigation from './components/navigation/';
 
 const store = configureStore();
 

@@ -21,10 +21,10 @@ DateTranslation.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    year: state.date.year,
-    month: state.date.month,
-    day: state.date.day,
-    dayOfWeek: state.date.dayOfWeek
+    year: state.training.year,
+    month: state.training.month,
+    day: state.training.day,
+    dayOfWeek: state.training.dayOfWeek
   };
 }
 

@@ -20,9 +20,9 @@ DateTranslation.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    hour: state.time.hour,
-    minute: state.time.minute,
-    timeOfDay: state.time.timeOfDay
+    hour: state.training.hour,
+    minute: state.training.minute,
+    timeOfDay: state.training.timeOfDay
   };
 }
 

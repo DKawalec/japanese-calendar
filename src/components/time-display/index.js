@@ -54,7 +54,7 @@ TimeDisplay.propTypes = {
     hour: PropTypes.number.isRequired,
     minute: PropTypes.number.isRequired
   }).isRequired,
-  onTimeChanged: PropTypes.func.isRequired,
+  onTimeChanged: PropTypes.func,
   isActive: PropTypes.bool.isRequired
 };
 
