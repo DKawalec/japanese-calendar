@@ -6,6 +6,7 @@ import CalendarDisplay from '../../components/calendar-display/';
 import TimeDisplay from '../../components/time-display/';
 import { TwoColumn, Center } from '../../components/layouts/';
 import TestButton from '../../components/test-button/';
+import { DateBox, TimeBox } from '../../components/answer-form/';
 import style from '../style.scss';
 
 class TestPage extends React.Component {
@@ -16,6 +17,8 @@ class TestPage extends React.Component {
         <TwoColumn>
           <CalendarDisplay date={date} isActive={false}/>
           <TimeDisplay time={time} isActive={false}/>
+          <DateBox/>
+          <TimeBox/>
         </TwoColumn>
         <Center>
           <TestButton/>
