@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import CalendarDisplay from '../../components/calendar-display/index';
-import TimeDisplay from '../../components/time-display/index';
-import Section from '../../components/section/index';
+import CalendarDisplay from '../../components/calendar-display/';
+import TimeDisplay from '../../components/time-display/';
+import { TwoColumn, Center } from '../../components/layouts/';
+import TestButton from '../../components/test-button/';
 import style from '../style.scss';
 
 class TestPage extends React.Component {
@@ -12,10 +13,12 @@ class TestPage extends React.Component {
     const { date, time } = this.props;
     return (
       <div className={style.main}>
-        <Section>
+        <TwoColumn>
           <CalendarDisplay date={date} isActive={false}/>
           <TimeDisplay time={time} isActive={false}/>
-        </Section>
+        </TwoColumn>
+        <Center>
+        </Center>
       </div>
     );
   }

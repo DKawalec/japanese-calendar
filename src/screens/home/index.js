@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { setDate, setTime } from '../../actions/trainingActions';
-import CalendarDisplay from '../../components/calendar-display/index';
-import TimeDisplay from '../../components/time-display/index';
-import { DateTranslation, TimeTranslation } from '../../components/translation-display/index';
-import Section from '../../components/section/index';
+import CalendarDisplay from '../../components/calendar-display/';
+import TimeDisplay from '../../components/time-display/';
+import { DateTranslation, TimeTranslation } from '../../components/translation-display/';
+import { TwoColumn } from '../../components/layouts/';
 import style from '../style.scss';
 
 class HomePage extends React.Component {
@@ -14,12 +14,12 @@ class HomePage extends React.Component {
     const { date, time, setDate, setTime } = this.props;
     return (
       <div className={style.main}> 
-        <Section>
+        <TwoColumn>
           <CalendarDisplay date={date} onDateChanged={setDate}/>
           <TimeDisplay time={time} onTimeChanged={setTime}/>
           <DateTranslation />
           <TimeTranslation />
-        </Section>
+        </TwoColumn>
       </div>
     );
   }

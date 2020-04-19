@@ -1,4 +1,11 @@
-.container {
+.centered {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.columnContainer {
     margin: 0 auto;
     max-width: 1024px;
     display: flex;
