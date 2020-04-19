@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import StartButton from './start-button';
+import CheckButton from './check-button';
 
 class TestButton extends PureComponent {
   render() {
-    return <StartButton/>;
+    return this.props.isAnswered ? <StartButton/> : <CheckButton/>;
   }
 }
 
