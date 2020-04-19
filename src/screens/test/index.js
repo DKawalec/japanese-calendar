@@ -18,6 +18,7 @@ class TestPage extends React.Component {
           <TimeDisplay time={time} isActive={false}/>
         </TwoColumn>
         <Center>
+          <TestButton/>
         </Center>
       </div>
     );

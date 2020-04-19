@@ -86,3 +86,11 @@ export const getDayOfWeek = (day, month, year) => {
 
   return daysDiff % 7 || 7;
 };
+
+export const getRandomDate = () => {
+  const year = 2020; // temp; I don't need random years now
+  const month = parseInt(Math.abs(Math.random() * 12) + 1, 10);
+  const day = parseInt(Math.abs(Math.random() * getMaxDay(month, year)) + 1, 10);
+
+  return { year, month, day };
+};

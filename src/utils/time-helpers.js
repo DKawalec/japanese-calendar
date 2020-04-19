@@ -53,3 +53,10 @@ export const getAmPm = (hour, minute) => {
     return hour < 12 ? AM : PM;
   }
 };
+
+export const getRandomTime = () => {
+  const hour = parseInt(Math.abs(Math.random() * 24), 10);
+  const minute = parseInt(Math.abs(Math.random() * 60), 10);
+
+  return { hour, minute };
+};
