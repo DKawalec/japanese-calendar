@@ -17,7 +17,7 @@ const store = configureStore();
 render(
   <Provider store={store}>
     <Router>
-      <Navigation/>
+      {/*<Navigation/>*/}
       <Switch>
         <Route path="/" exact>
           <HomePage/>

@@ -22,7 +22,7 @@ export const MONTH_NAMES = [
   'juunigatsu'
 ];
 export const MONTH_DAY_NAMES = [
-  'tsuidachi',
+  'tsuitachi',
   'futsuka',
   'mikka',
   'yokka',
